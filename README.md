@@ -12,7 +12,13 @@ Tools needed to run this app:
 * `clone` repository
 * run `npm install` to install dependencies in package.json
 
-### 1 - Run the App
+### 2 - Change Environment (set the endpoint)
+
+* run `gulp replace --env name`, to change environment or set the endpoint.
+
+The parameter following the --env flag is the name of the environment you want to use. Ensure that you have run the command to set the environment.
+
+### 3 - Run the App
 
 NG6 uses Gulp to build and launch the development environment. After you have installed all dependencies, you may run the app. Running `npm start` will bundle the app with `webpack`, launch a development server, and watch all files. The port will be displayed in the terminal.
 
