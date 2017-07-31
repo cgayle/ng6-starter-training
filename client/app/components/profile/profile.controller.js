@@ -5,15 +5,14 @@ class ProfileController {
         this.name = 'PROFILE';
         this.User = User;
 
-
         this.User.getLoggedInUserInfo().then((response) => {
             if(response) {
+                console.log(response);
                 this.userData = response;
             }
         });
+
     }
-
-
 }
 
 export default ProfileController;

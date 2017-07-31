@@ -5,6 +5,9 @@
                 <div class="form-login">
                     <form name="loginForm" ng-submit="loginForm.$valid && $ctrl.login()" novalidate>
                         <h4>Welcome back.</h4>
+
+                        <flash-message duration="3000" show-close="true"></flash-message>
+
                         <input type="text" id="userEmail" name="email" class="form-control input-sm chat-input"
                                ng-model="$ctrl.form.email" placeholder="username" required/>
 

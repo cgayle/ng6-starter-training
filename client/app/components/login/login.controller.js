@@ -1,5 +1,5 @@
 class LoginController {
-    constructor($state, $location, CONFIG, SERVER, Auth, Session, AlertService) {
+    constructor($state, $location, CONFIG, SERVER, Auth, Session, Flash) {
         'ngInject' // to override strict-di mode
 
         this.name = 'login';
@@ -12,7 +12,7 @@ class LoginController {
 
         // Services
         this.Auth = Auth;
-        this.AlertService = AlertService;
+        this.Flash = Flash;
 
         // Factory
         this.Session = Session;
@@ -36,8 +36,9 @@ class LoginController {
             if(response.token){
                 this.Session.setToken(response.token);
                 this.$state.go('home');
-                //this.AlertService.alert("nice");
-            }else{}
+            }
+        }, (error) => {
+            this.Flash.create('danger', error.data.message);
         });
     }
 }

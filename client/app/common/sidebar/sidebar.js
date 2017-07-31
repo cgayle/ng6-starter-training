@@ -7,7 +7,7 @@ let sidebarModule = angular.module('sidebar', [
 ])
 
 .component('sidebar', sidebarComponent)
-  
+
 .name;
 
 export default sidebarModule;

@@ -8,6 +8,7 @@ import Factories from './factories/factories';
 import AppComponent from './app.component';
 import ngMessages from 'angular-messages';
 import ngMaterial from 'angular-material';
+import ngFlash from 'angular-flash-alert';
 
 // css
 import 'normalize.css';
@@ -32,6 +33,7 @@ angular.module('app', [
     uiRouter,
     ngMessages,
     ngMaterial,
+    ngFlash,
     Common,
     Components,
     Services,
