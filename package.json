@@ -9,6 +9,7 @@
     "angular-aria": "^1.6.5",
     "angular-flash-alert": "^2.5.0",
     "angular-material": "^1.1.4",
+    "angular-ui-bootstrap": "^2.5.0",
     "angular-ui-router": "^1.0.0-beta.1",
     "metismenu": "^2.7.0",
     "normalize.css": "^3.0.3"

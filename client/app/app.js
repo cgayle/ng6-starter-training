@@ -1,5 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import $ from 'jquery';
 import Common from './common/common';
 import Components from './components/components';
 import Services from './services/services';
@@ -10,24 +11,23 @@ import ngMessages from 'angular-messages';
 import ngMaterial from 'angular-material';
 import ngFlash from 'angular-flash-alert';
 
+// js
+import 'metismenu/dist/metisMenu.min';
+import './assets/js/template.js';
+
 // css
 import 'normalize.css';
 import './assets/css/template.css';
 import 'font-awesome/css/font-awesome.css';
-
-// js
-import './assets/js/template.js';
-import 'metismenu';
+import 'angular-ui-bootstrap';
+import 'metismenu/dist/metisMenu.min.css';
 
 // Config
 import * as Config from '../../config';
 import * as ServerConstants from './constants/server.constants';
 
-
 require('bootstrap-loader');
 
-var $ = require('jquery');
-window.jQuery = $;
 
 angular.module('app', [
     uiRouter,
@@ -49,6 +49,7 @@ angular.module('app', [
 
     .run(($state, $http, $rootScope, Session) => {
      "ngInject";
+
 
      // Check is user is already logged in
      // Check token

@@ -1,36 +1,34 @@
 <div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-offset-5 col-md-3">
-                <div class="form-login">
-                    <form name="loginForm" ng-submit="loginForm.$valid && $ctrl.login()" novalidate>
-                        <h4>Welcome back.</h4>
+    <div id="wrapper">
+        <div class="col-md-offset-4 col-md-4">
+            <div class="login-panel form-login">
+                <form name="loginForm" ng-submit="loginForm.$valid && $ctrl.login()" novalidate>
+                    <h4>Welcome back.</h4>
+                    <input type="text" id="userEmail" name="email" class="form-control input-sm chat-input"
+                           ng-model="$ctrl.form.email" placeholder="username" required/>
 
-                        <flash-message duration="3000" show-close="true"></flash-message>
+                    <div ng-messages="loginForm.email.$error"
+                         ng-show="loginForm.$submitted && loginForm.password.$error" role="alert">
+                        <div ng-message="required" class="error">Please enter a value for this field.</div>
+                    </div>
+                    </br>
+                    <input type="password" id="userPassword" name="password"
+                           class="form-control input-sm chat-input"
+                           ng-model="$ctrl.form.password" placeholder="password" required/>
 
-                        <input type="text" id="userEmail" name="email" class="form-control input-sm chat-input"
-                               ng-model="$ctrl.form.email" placeholder="username" required/>
+                    <div ng-messages="loginForm.password.$error"
+                         ng-show="loginForm.$submitted && loginForm.password.$error" role="alert">
+                        <div ng-message="required" class="error">Please enter a value for this field.</div>
+                    </div>
+                    </br>
 
-                        <div ng-messages="loginForm.email.$error" ng-show="loginForm.$submitted && loginForm.password.$error" role="alert">
-                            <div ng-message="required" class="error">Please enter a value for this field.</div>
-                        </div>
-                        </br>
-                        <input type="password" id="userPassword" name="password" class="form-control input-sm chat-input"
-                               ng-model="$ctrl.form.password" placeholder="password" required/>
-
-                        <div ng-messages="loginForm.password.$error" ng-show="loginForm.$submitted && loginForm.password.$error" role="alert">
-                            <div ng-message="required" class="error">Please enter a value for this field.</div>
-                        </div>
-                        </br>
-
-                        <div class="wrapper">
+                    <div class="wrapper">
                             <span class="group-btn">
                             <button type="submit" class="btn btn-primary btn-md">login <i
                                     class="fa fa-sign-in"></i></button>
                             </span>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

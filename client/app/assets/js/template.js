@@ -1,6 +1,8 @@
-$(function() {
-    $('#side-menu').metisMenu();
-});
+window.metisMenu = function(){
+    $(function() {
+        $('#side-menu').metisMenu();
+    });
+
 
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
@@ -40,3 +42,6 @@ $(function() {
         }
     }
 });
+}
+
+window.metisMenu();

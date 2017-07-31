@@ -1,10 +1,11 @@
 class LoginController {
-    constructor($state, $location, CONFIG, SERVER, Auth, Session, Flash) {
+    constructor($state, $timeout, $location, CONFIG, SERVER, Auth, Session, Flash) {
         'ngInject' // to override strict-di mode
 
         this.name = 'login';
         this.$state = $state;
         this.$location = $location;
+        this.$timeout = $timeout;
 
         // Constants
         this.CONFIG = CONFIG;
@@ -35,7 +36,9 @@ class LoginController {
         this.Auth.login(data).then((response) => {
             if(response.token){
                 this.Session.setToken(response.token);
-                this.$state.go('home');
+                this.$state.go('home', {}, {reload: true}).then(function() {
+                    window.metisMenu(); //reload metisMenu
+                });
             }
         }, (error) => {
             this.Flash.create('danger', error.data.message);
